@@ -106,6 +106,9 @@ namespace binaire_constexpr
         template<std::size_t n>
         constexpr constexpr_array<uint32_t, 4> md5_hard(const uint32_t (&w)[n], uint32_t h0, uint32_t h1, uint32_t h2, uint32_t h3)
         {
+            // origin code of this function
+            // https://web.njit.edu/~hz278/md5/md5_orig.c
+
             static_assert(n%16==0, "marche pas");
             constexpr const uint32_t r[] = {7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
                                             5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20,
